@@ -46,7 +46,7 @@ local transformer_dim = 768;
       "num_layers": 2,
       "hidden_dims": [768, 512],
       "activations": "mish",
-      "dropout": 0.6367
+      "dropout": 0.6
     },
     "dropout": 0.3,
   },
@@ -63,7 +63,7 @@ local transformer_dim = 768;
   "trainer": {
     "num_epochs": 100,
     "patience": 5,
-    "validation_metric": "+f1",
+    "validation_metric": "+accuracy",
     "cuda_device": 0,
     "learning_rate_scheduler": {
       "type": "slanted_triangular",
