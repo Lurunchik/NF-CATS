@@ -21,6 +21,6 @@ if __name__ == '__main__':
     test_df = pd.read_csv(f'{DATA_PATH}/test.csv', sep=',')
 
     y_pred = [predictor.predict(q) for q in tqdm.tqdm(test_df.question)]
-    print(pandas_classification_report(y_true=test_df.type, y_pred=[p['label'] for p in y_pred]))
+    print(pandas_classification_report(y_true=test_df.category, y_pred=[p['label'] for p in y_pred]))
 
     print(predictor.predict('why do we need a taxonomy?'))
