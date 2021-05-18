@@ -9,7 +9,7 @@ from allennlp.data.token_indexers import PretrainedTransformerIndexer, TokenInde
 from allennlp.data.tokenizers import PretrainedTransformerTokenizer, Tokenizer
 from overrides import overrides
 
-logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
+LOGGER = logging.getLogger(__name__)
 
 
 @DatasetReader.register('csv_text_label')
@@ -39,10 +39,9 @@ class TextClassificationCsvReader(TextClassificationJsonReader):
 
     @overrides
     def _read(self, file_path: str):
-        # if `file_path` is a URL, redirect to the cache
-        file_path = cached_path(file_path)
+        file_path = cached_path(file_path)  # if `file_path` is a URL, redirect to the cache
 
-        logger.info('Reading file at %s', file_path)
+        LOGGER.info('Reading file at %s', file_path)
 
         with open(file_path) as dataset_file:
             data = csv.DictReader(dataset_file, delimiter=self._sep)
@@ -55,7 +54,3 @@ class TextClassificationCsvReader(TextClassificationJsonReader):
                     instance = self.text_to_instance(text=text, label=row[self._label])
                     if instance is not None:
                         yield instance
-
-
-if __name__ == '__main__':
-    print(next(TextClassificationCsvReader(label_field='category', text_field='question').read('./test_01.csv')))

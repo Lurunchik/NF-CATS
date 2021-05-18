@@ -7,7 +7,7 @@ from allennlp.modules import FeedForward
 from allennlp.training.metrics import FBetaMeasure
 from overrides import overrides
 
-from .embedder import SentenceEmbedder
+from nfcats.embedder import SentenceEmbedder
 
 
 @Model.register('nfq_cats_classifier')

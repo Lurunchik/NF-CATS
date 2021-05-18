@@ -15,7 +15,7 @@ class SentenceEmbedder(Registrable, ABC):
         pass
 
     @abstractmethod
-    def forward(self, tokens: Optional[TextFieldTensors] = None, texts: Optional[List[str]] = None,) -> torch.Tensor:
+    def forward(self, tokens: Optional[TextFieldTensors] = None, texts: Optional[List[str]] = None) -> torch.Tensor:
         pass
 
 
@@ -35,7 +35,7 @@ class TrainableEmbedder(torch.nn.Module, SentenceEmbedder):
     def get_output_dim(self) -> int:
         return self._seq2vec_encoder.get_output_dim()
 
-    def forward(self, tokens: Optional[TextFieldTensors] = None, texts: Optional[List[str]] = None,) -> torch.Tensor:
+    def forward(self, tokens: Optional[TextFieldTensors] = None, texts: Optional[List[str]] = None) -> torch.Tensor:
         embedded_text = self._text_field_embedder(tokens)
         mask = get_text_field_mask(tokens)
 

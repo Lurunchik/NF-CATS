@@ -5,7 +5,7 @@ WIDTH = 120
 .PHONY: pretty lint
 
 pretty:
-	$(VENV) black  --skip-string-normalization --line-length $(WIDTH) $(CODE)
+	$(VENV) black --skip-string-normalization --line-length $(WIDTH) $(CODE)
 	$(VENV) isort --apply --recursive --line-width $(WIDTH) $(CODE)
 	$(VENV) unify --in-place --recursive $(CODE)
 
