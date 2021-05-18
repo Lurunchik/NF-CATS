@@ -3,14 +3,12 @@ import tqdm
 from allennlp.models.archival import load_archive
 from allennlp.predictors.predictor import Predictor
 
+from nfcats import MODEL_PATH, DATA_PATH
 from nfcats.classifier import NFQCatsClassifier
 from nfcats.dataset_reader import TextClassificationCsvReader
 from nfcats.sampler import BalancedBatchSampler
 from nfcats.utils import pandas_classification_report
 from nfcats.wandb_callback import WnBCallback
-
-DATA_PATH = 'data'
-MODEL_PATH = 'pretrained_model'
 
 if __name__ == '__main__':
     archive = load_archive(MODEL_PATH, cuda_device=-1)

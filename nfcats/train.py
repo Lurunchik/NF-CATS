@@ -8,6 +8,7 @@ from allennlp.commands.train import train_model
 from allennlp.common import Params
 from allennlp.models import load_archive
 
+from nfcats import DATA_PATH
 from .classifier import NFQCatsClassifier
 from .dataset_reader import TextClassificationCsvReader
 from .sampler import BalancedBatchSampler
@@ -15,7 +16,6 @@ from .wandb_callback import WnBCallback
 
 model_params = 'nft_classifier.jsonnet'
 
-DATA_PATH = 'data/v03'
 logging.basicConfig(level='DEBUG')
 if __name__ == '__main__':
     wandb.init(project='non-factoid-classification', reinit=True, name='roberta-tuned-on-squad')
