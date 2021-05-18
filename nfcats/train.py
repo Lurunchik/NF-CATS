@@ -15,10 +15,11 @@ from nfcats.sampler import BalancedBatchSampler
 from nfcats.wandb_callback import WnBCallback
 
 model_params = ROOT_PATH / 'nft_classifier.jsonnet'
+WB_LOGIN = 'your_login'
 
 logging.basicConfig(level='DEBUG')
 if __name__ == '__main__':
-    wandb.init(project='non-factoid-classification', reinit=True, name='roberta-tuned-on-squad')
+    wandb.init(entity=WB_LOGIN, project='non-factoid-classification', reinit=True, name='roberta-tuned-on-squad')
     params = Params.from_file(
         model_params,
         ext_vars={

@@ -22,7 +22,7 @@ local transformer_dim = 768;
   "train_data_path": std.extVar("TRAIN_DATA_PATH"),
   "validation_data_path": std.extVar("VALID_DATA_PATH"),
   "model": {
-    "type": "classifier_with_custom_loss",
+    "type": "nfq_cats_classifier",
     "embedder": {
         "type": "trainable",
         "text_field_embedder": {
