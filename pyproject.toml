@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "nfcats"
+version = "1.0.0"
+description = ""
+authors = ["Valeriia Bolotova <lurunchik@gmail.com>", "Vladislav Blinov <cunningplan@yandex.ru>"]
+repository = "https://github.com/Lurunchik/NF-CATS"
+readme = "README.md"
+license = "MIT"
+classifiers = [
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: Implementation :: CPython",
+]
+
+[tool.poetry.dependencies]
+python = "^3.7.0"
+allennlp = "2.0.1"
+allennlp-models = "2.0.1"
+wandb = "^0.10.18"
+pandas = "*"
+overrides = "^3.1.0"
+
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.740"
+flake8 = "^3.7.9"
+flake8-isort = "^2.7.0"
+flake8-builtins = "^1.4.1"
+flake8-comprehensions = "^3.0.1"
+flake8-debugger = "^3.2.1"
+flake8-eradicate = "^0.2.3"
+pep8-naming = "^0.9.0"
+black = "^19.10b0"
+isort = "^4.3.21"
+unify = "^0.5"
+pylint = "^2.4.3"
+bertviz = "^1.0.0"
+requests = "*"
+rarfile = "*"
+ipywidgets = "*"
+
+[tool.black]
+line-length = 88
+target-version = ["py37"]
+
+[build-system]
+requires = ["poetry>=1.0.5"]
+build-backend = "poetry.masonry.api"

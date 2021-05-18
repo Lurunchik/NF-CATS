@@ -1,0 +1,2 @@
+nfcats/pretrained_model filter=lfs diff=lfs merge=lfs -text
+nfcats/data filter=lfs diff=lfs merge=lfs -text
