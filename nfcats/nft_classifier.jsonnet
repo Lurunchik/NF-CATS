@@ -63,7 +63,7 @@ local transformer_dim = 768;
   "trainer": {
     "num_epochs": 100,
     "patience": 5,
-    "validation_metric": "+accuracy",
+    "validation_metric": "+weighted_f1",
     "cuda_device": 0,
     "learning_rate_scheduler": {
       "type": "slanted_triangular",

@@ -4,6 +4,7 @@ import torch
 from allennlp.data import TextFieldTensors, Vocabulary
 from allennlp.models.model import Model
 from allennlp.modules import FeedForward
+from allennlp.training.metrics import FBetaMeasure
 from overrides import overrides
 
 from .embedder import SentenceEmbedder
@@ -41,6 +42,11 @@ class NFQCatsClassifier(Model):
 
         self._num_labels = vocab.get_vocab_size(namespace=self.label_namespace)
         self._classification_layer = torch.nn.Linear(self._classifier_input_dim, self._num_labels)
+
+    def get_metrics(self, reset: bool = False) -> Dict[str, float]:
+        metrics = super().get_metrics(reset)
+        metrics['weighted_f1'] = FBetaMeasure(beta=1.0, average='weighted', labels=None)
+        return metrics
 
     @overrides
     def forward(
