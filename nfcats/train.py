@@ -8,13 +8,13 @@ from allennlp.commands.train import train_model
 from allennlp.common import Params
 from allennlp.models import load_archive
 
-from nfcats import DATA_PATH
+from nfcats import DATA_PATH, ROOT_PATH
 from nfcats.classifier import NFQCatsClassifier
 from nfcats.dataset_reader import TextClassificationCsvReader
 from nfcats.sampler import BalancedBatchSampler
 from nfcats.wandb_callback import WnBCallback
 
-model_params = 'nft_classifier.jsonnet'
+model_params = ROOT_PATH / 'nft_classifier.jsonnet'
 
 logging.basicConfig(level='DEBUG')
 if __name__ == '__main__':
