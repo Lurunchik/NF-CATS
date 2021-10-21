@@ -2,7 +2,7 @@
 name = "nfcats"
 version = "1.0.0"
 description = "Non-Factoid Question Classification"
-authors = ["Valeriia Bolotova <lurunchik@gmail.com>", "Vladislav Blinov <cunningplan@yandex.ru>"]
+authors = []
 repository = "https://github.com/Lurunchik/NF-CATS"
 readme = "README.md"
 license = "MIT"

@@ -10,7 +10,19 @@ From source:
     poetry install
 
 
-## Model training
-Load and prepare training data:
+## Model
+Run test validation of best fine-tuned model:
+
+    python nfcats/predict.py
+
+Train transformer model
+
+    python nfcats/train.py
+
+Tf-idf experiments:
+ 
+    python tf_idf.py 
+
+
 
 
