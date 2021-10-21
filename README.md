@@ -1,7 +1,7 @@
 # Non Factoid Question Category classification
 
 ## NF_CATS Dataset
-The dataset for training is located [here](nfcats/data/)
+The dataset for training is located in [nfcats/data](nfcats/data/)
 
 
 ## Installation
