@@ -14,7 +14,7 @@ The dataset for training is located in [nfcats/data](nfcats/data/)
 ## Model 
 The trained could be downloaded from [the hugginface repository](https://huggingface.co/Lurunchik/nf-cats) and you test the model via [hugginface space](https://huggingface.co/spaces/Lurunchik/nf-cats)
 
-<iframe src="https://huggingface.co/spaces/Lurunchik/nf-cats" title="NFQA categories model demo"></iframe>
+[![demo.png](demo.png)](https://huggingface.co/spaces/Lurunchik/nf-cats)
 
 ## Installation
 
